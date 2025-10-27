@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Application UI</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #eceff1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      width: 400px;
+      height: 600px;
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-header {
+      background: #1976d2;
+      color: white;
+      padding: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #f5f5f5;
+    }
+
+    .message {
+      max-width: 75%;
+      padding: 10px 14px;
+      border-radius: 18px;
+      font-size: 15px;
+      line-height: 1.4;
+      word-wrap: break-word;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .incoming {
+      background: #fff;
+      align-self: flex-start;
+      border: 1px solid #ddd;
+    }
+
+    .outgoing {
+      background: #1976d2;
+      color: white;
+      align-self: flex-end;
+    }
+
+    .chat-footer {
+      display: flex;
+      padding: 12px;
+      border-top: 1px solid #ddd;
+      background: #fff;
+    }
+
+    .chat-footer input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .chat-footer button {
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 18px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .chat-footer button:hover {
+      background: #1565c0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scrollbar styling */
+    .chat-body::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .chat-body::-webkit-scrollbar-thumb {
+      background: #bbb;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">Chat with Support</div>
+    <div class="chat-body">
+      <div class="message incoming">Hello! How can I help you today?</div>
+      <div class="message outgoing">Hi! I’m looking for information on your plans.</div>
+      <div class="message incoming">Sure! We have several options available. Would you like to hear about our basic or premium plan?</div>
+      <div class="message outgoing">Tell me about the premium one.</div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Type a message..." />
+      <button>Send</button>
+    </div>
+  </div>
+</body>
+</html>
+
